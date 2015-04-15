@@ -1,0 +1,29 @@
+<%= form_for(@shake) do |f| %>
+  <% if @shake.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shake.errors.count, 'virhe', 'virhettä') %> esti tallennuksen:</h2>
+
+      <ul>
+      <% @shake.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nimi %><br>
+    <%= f.text_field :nimi %>
+  </div>
+  <div class="field">
+    <%= f.label :kuvaus %><br>
+    <%= f.text_area :kuvaus %>
+  </div>
+  <div class="field">
+    <%= f.label :arvo %><br>
+    <%= f.text_field :arvo %>
+  </div>
+  <div class="actions">
+    <%= submit_tag("Tallenna", :class => 'submit-tag') %>
+  </div>
+<% end %>

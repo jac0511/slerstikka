@@ -1,0 +1,2 @@
+module KirjausHelper
+end

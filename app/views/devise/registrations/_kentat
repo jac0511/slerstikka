@@ -1,0 +1,37 @@
+<table summary="user form fields">
+	<tr>
+		<th><%= f.label :etunimi %></th>
+		<td><%= f.text_field :etunimi %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :sukunimi %></th>
+		<td><%= f.text_field :sukunimi %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :email, "Sähköposti" %></th>
+		<td><%= f.text_field :email %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :puhelin %></th>
+		<td><%= f.text_field :puhelin %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :kotikunta %></th>
+		<td><%= f.text_field :kotikunta %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :metsastajanumero, "Metsästäjänumero" %></th>
+		<td><%= f.text_field :metsastajanumero %></td>
+	</tr>
+	<tr>
+		<th><% f.label :oravannahat %></th>
+		<td><% f.hidden_field :oravannahat %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :ayy_jasen, "AYY-jäsen" %></th>
+		<td><%= f.check_box :ayy_jasen %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :muussa_seurassa, "Jäsen muussa seurassa" %></th>
+		<td><%= f.check_box :muussa_seurassa %></td>
+	</tr>

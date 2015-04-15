@@ -1,0 +1,23 @@
+
+<p>
+  <strong>Nimi:</strong>
+  <%= @vittuilu.user_nimi %>
+</p>
+
+<p>
+  <strong>Kommentti:</strong>
+  <%= @vittuilu.teksti %>
+</p>
+
+<p>
+  <strong>Resepti:</strong>
+  <%= @vittuilu.retsept.nimi %>
+</p>
+
+<p>
+  <strong></strong>
+  <% @vittuilu.arvostus %>
+</p>
+
+<%= link_to 'Muokkaa', edit_vittuilu_path(@vittuilu) %> |
+<%= link_to 'Takaisin', retsept_path(@vittuilu.retsept) %>

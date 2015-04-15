@@ -1,0 +1,36 @@
+
+<h2>Keittokirja</h2>
+
+<table>
+  <thead>
+    <tr>
+	<th>Nimi</th>
+	<th>Kuvaus</th>
+	<th>Minuutit</th>
+	<th>Vaativuus</th>
+	<th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @retsepts.each do |retsept| %>
+      <tr>
+	<td><%= link_to retsept.nimi, retsept %></td>
+	<td><%= retsept.kuvaus %></td>
+	<td><%= retsept.aika %></td>
+	<td><%= retsept.vaativuus %></td>
+		<% if user_signed_in? and if current_user.hallituksessa == true or current_user.id == retsetpt.user %>
+	<td><%= link_to 'Muokkaa', edit_retsept_path(retsept) %></td>
+	<td><%= link_to 'Tuhoa', retsept, method: :delete, data: { confirm: 'Ootko varma?' } %></td>
+		<% end %>
+		<% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<% if user_signed_in? %>
+	<%= link_to 'Uusi resepti', new_retsept_path %>
+<% end %>

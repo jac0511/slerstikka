@@ -1,0 +1,47 @@
+
+<%= render(:partial => "layouts/backlink") %>
+
+<h2> Jäsenen tiedot </h2>
+
+<table summary="user info fields">
+	<tr>
+		<th> Etunimi </th>
+		<td><%= @user.etunimi %></td>
+	</tr>
+	<tr>
+		<th> Sukunimi </th>
+		<td><%= @user.sukunimi %></td>
+	</tr>
+	<tr>
+		<th> Sähköposti </th>
+		<td><%= @user.email %></td>
+	</tr>
+	<tr>
+		<th> Kotikunta </th>
+		<td><%= @user.kotikunta %></td>
+	</tr>
+	<tr>
+		<th> Metsästäjänumero </th>
+		<td><%= @user.metsastajanumero %></td>
+	</tr>
+	<tr>
+		<th> Puhelinnumero </th>
+		<td><%= @user.puhelin %></td>
+	</tr>
+	<tr>
+		<th> AYY-jäsen </th>
+		<td><%= @user.ayy_jasen %></td>
+	</tr>
+	<tr>
+		<th> Jäsenenä muussa seurassa </th>
+		<td><%= @user.muussa_seurassa %></td>
+	</tr>
+</table>
+
+	<% if @user or @user.hallituksessa == "true" %>
+	<%= link_to 'Muokkaa', edit_user_registration_path(@user) %>
+	<% end %>
+	<% if @user.hallituksessa == "true" %>
+	<%= link_to 'Poista', user, method: :delete, data: { confirm: 'Ootko varma?' } %>
+	<% end %>
+	

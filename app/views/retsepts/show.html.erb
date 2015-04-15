@@ -1,0 +1,58 @@
+
+<p>
+  <%= image_tag(@retsept.kuva_url, :width => 600) if @retsept.kuva.present? %>
+</p>
+
+  <h2> <%= @retsept.nimi %> </h2>
+
+<p>
+  <strong>Luokka:</strong>
+  <%= @retsept.luokka %>
+</p>
+<p>
+  <strong>Kuvaus:</strong>
+  <%= @retsept.kuvaus %>
+</p>
+
+<p>
+  <strong>Ainekset:</strong>
+  <%= @retsept.ainekset %>
+</p>
+
+<p>
+  <strong>Ohjeet:</strong>
+  <%= @retsept.ohjeet %>
+</p>
+
+<p>
+  <strong>Valmistusaika (min):</strong>
+  <%= @retsept.aika %>
+</p>
+
+<p>
+  <strong>Vaativuus:</strong>
+  <%= @retsept.vaativuus %>
+</p>
+
+<% if current_user %> 
+<%= link_to 'Muokkaa', edit_retsept_path(@retsept) %> |
+<% end %>
+<%= link_to 'Takaisin', retsepts_path %>
+
+<br>
+<br>
+<h3>Kommentit:</h3>
+<% @vittuilus.each do |vittuilu| %>
+  <div>
+    <p><strong><%= vittuilu.user_nimi %>: </strong>
+    "<%= vittuilu.teksti %>"
+	 <% if current_user %> 
+	 – <%= link_to 'Delete', vittuilu_path(vittuilu), method: :delete, data: { confirm: 'Sanoikko vittu jotai tyhmää? HÄ!?' } %>
+	 <% end %></p>
+  </div>
+<% end %>
+
+<% if user_signed_in? %>
+<%= render 'vittuilus/form' %>
+<% end %>
+

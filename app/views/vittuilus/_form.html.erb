@@ -1,0 +1,29 @@
+
+<%= form_for(@vittuilu) do |f| %>
+  <% if @vittuilu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@vittuilu.errors.count, "error") %> prohibited this shite from being saved:</h2>
+
+      <ul>
+      <% @vittuilu.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_nimi, "Nimi:" %><br>
+    <%= f.text_field :user_nimi %>
+  </div>
+  <div class="field">
+    <%= f.label :teksti, "Kommentti:" %><br>
+    <%= f.text_area :teksti %>
+  </div>
+    <% f.label :arvostus %><br>
+    <% f.text_field :arvostus %>
+  <%= f.hidden_field :retsept_id %>
+  <div class="actions">
+    <%= submit_tag("Kommentoi", :class => 'submit-tag') %>
+  </div>
+<% end %>

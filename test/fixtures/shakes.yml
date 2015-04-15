@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nimi: MyString
+  kuvaus: MyText
+  arvo: 9.99
+
+two:
+  nimi: MyString
+  kuvaus: MyText
+  arvo: 9.99

@@ -1,0 +1,21 @@
+<% @page_title = "Tunnus lukossa" %>
+
+<h2>Lähetä lukituksen poisto -ohjeet toistamiseen</h2>
+
+<%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+<table>
+	<tr>
+		<th><%= f.label :email, "Sähköposti" %></th>
+		<td><%= f.text_field :email, autofocus: true %></td>
+	</tr>
+	<% end %>
+</table>
+
+  <div class="actions">
+    <%= submit_tag("Lähetä", :class => 'submit-tag') %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

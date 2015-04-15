@@ -1,0 +1,2 @@
+module VittuilusHelper
+end

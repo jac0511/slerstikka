@@ -1,0 +1,20 @@
+<% @page_title = "Unohtunut salasana" %>
+
+<h2>Unohtuiko salasana?</h2>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+<table>
+	<tr>
+		<th><%= f.label :email, "Sähköposti" %></th>
+		<td><%= f.text_field :email, autofocus: true %></td>
+	</tr>
+</table>
+
+  <div class="actions">
+    <%= submit_tag("Lähetä salasanan nollaus ohjeet", :class => 'submit-tag') %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

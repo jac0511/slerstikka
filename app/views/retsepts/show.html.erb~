@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Luokka:</strong>
+  <%= @retsept.luokka %>
+</p>
+
+<p>
+  <strong>Nimi:</strong>
+  <%= @retsept.nimi %>
+</p>
+
+<p>
+  <strong>Kuvaus:</strong>
+  <%= @retsept.kuvaus %>
+</p>
+
+<p>
+  <strong>Ainekset:</strong>
+  <%= @retsept.ainekset %>
+</p>
+
+<p>
+  <strong>Ohjeet:</strong>
+  <%= @retsept.ohjeet %>
+</p>
+
+<p>
+  <strong>Aika:</strong>
+  <%= @retsept.aika %>
+</p>
+
+<p>
+  <strong>Vaativuus:</strong>
+  <%= @retsept.vaativuus %>
+</p>
+
+<%= link_to 'Edit', edit_retsept_path(@retsept) %> |
+<%= link_to 'Back', retsepts_path %>
+
+
+<h3>Kommentit</h3>
+<% @vittuilus.each do |vittuilu| %>
+  <div>
+    <strong><%= vittuilu.user_nimi %></strong>
+    <br />
+    <p><%= vittuilu.teksti %></p>
+	<% if current_user %>
+    <p><%= link_to 'Delete', vittuilu_path(vittuilu), method: :delete, data: { confirm: 'Sanoikko vittu jotai tyhmää? HÄ!?' } %></p>
+	<% end %>
+  </div>
+<% end %>
+<%= render 'vittuilus/form' %>

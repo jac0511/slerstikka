@@ -1,0 +1,59 @@
+/* Admin stylesheet       */
+/* load after public.css */
+
+/* Structure */
+#content { padding-left: 100px; padding-right: 100px; }
+#content h2 { width: 100%; text-align: center; }
+
+.login form { margin: 100px 250px; }
+.menu .identity { text-align: center; }
+.menu ul { margin: 3em 250px; list-style: none; }
+.menu ul li { margin-bottom: 1em; }
+
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* large action buttons */
+a.action { float: right; padding: 2px 5px; margin: 0 0 1em 1em;
+  background: black; color: yellow;  border: 1px solid yellow;
+  text-decoration: none; font-size: 1em; text-align: center; }
+a.action:hover { background: gray; }
+
+/* small action buttons */
+.actions { width: 240px; }
+.actions a.action { float: left; min-width: 3.5em;
+  padding: 1px 2px; margin: 2px 5px; font-size: 0.7em; }
+
+/* CRUD */
+.notice { height: 1.25em; padding: 0.5em; text-align: center;
+  background: gray; color: blue; }
+.back-link { font-size: 1em; margin-bottom: 1em; }
+.form-buttons { text-align: center; }
+
+.index table { clear: both; width: 100%; }
+.index table tr td { border: 1px solid gray; }
+.show table { clear: both; margin: 0 200px; width: 300px; }
+.show table.wide { width: 400px; margin: 0 50px; }
+.show table tr th { white-space: nowrap; padding-right: 5px;}
+.show table tr td { border: 1px solid gray; }
+.edit table, .new table { margin: 0 auto; }
+.submit-tag { padding: 2px 5px; margin: 0 0 1em 1em;
+  background: black; color: yellow;  border: 1px solid yellow;
+  text-decoration: none; font-size: 1em; text-align: center; }
+
+/* status_tag */
+span.status { display: block; width: 10px; height: 10px;
+  margin: 0.25em auto; padding: 0; border: 1px solid black; }
+span.status.true  { background: gray; color: gray; }
+span.status.false { background: red; color: red; }
+
+/* Errors */
+.field_with_errors { }
+.field_with_errors label { color: red; }
+.field_with_errors input { border: 1px solid red;}
+#errorExplanation { width: 400px; padding: 0; margin: 0 auto 1.5em;
+  border: 1px solid red; background-color: white; font-size: 12px; }
+#errorExplanation h2 { font-weight: bold; font-size: 12px;
+  padding: 5px 5px 5px 15px; margin: 0; width: 380px;
+  background-color: red; color: white; }
+#errorExplanation p { color: black; margin: 0; padding: 3px 0.5em; }

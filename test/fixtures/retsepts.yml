@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  luokka: MyString
+  nimi: MyString
+  kuvaus: MyText
+  ainekset: MyText
+  ohjeet: MyText
+  aika: 9.99
+  vaativuus: MyString
+
+two:
+  luokka: MyString
+  nimi: MyString
+  kuvaus: MyText
+  ainekset: MyText
+  ohjeet: MyText
+  aika: 9.99
+  vaativuus: MyString

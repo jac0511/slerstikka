@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nimi:</strong>
+  <%= @shake.nimi %>
+</p>
+
+<p>
+  <strong>Kuvaus:</strong>
+  <%= @shake.kuvaus %>
+</p>
+
+<p>
+  <strong>Arvo:</strong>
+  <%= @shake.arvo %>
+</p>
+
+<%= link_to 'Muokkaa', edit_shake_path(@shake) %> |
+<%= link_to 'Kaikki tuotteet', shakes_path %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_nimi: MyString
+  teksti: MyText
+  retsept_id: 1
+  arvostus: 9.99
+
+two:
+  user_nimi: MyString
+  teksti: MyText
+  retsept_id: 1
+  arvostus: 9.99

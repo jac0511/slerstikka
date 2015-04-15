@@ -1,0 +1,39 @@
+
+<h2>Tietokannassa <%= pluralize(User.count, 'jäsen', 'jäsentä') %></h2>
+<% if current_user.hallituksessa == true %>
+  <table>
+    <thead>
+      <tr>
+	<th>Etunimi</th>
+		  <th>Sukunimi</th>
+		  <th>Sähköposti</th>
+		  <th>Kotikunta</th>
+		  <th>Puhelin</th>
+		  <th>Metsästäjänumero</th>
+		  <th>AYY</th>
+	<th>Muu seura</th>
+	<th colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @users.each do |user| %>
+	<tr>
+	  <td><%= user.etunimi %></td>
+	  <td><%= user.sukunimi %></td>
+	  <td><%= user.email %></td>
+	  <td><%= user.kotikunta %></td>
+	  <td><%= user.puhelin %></td>
+	  <td><%= user.metsastajanumero %></td>
+	  <td><%= user.ayy_jasen %></td>
+	  <td><%= user.muussa_seurassa %></td>
+	  <td><%= link_to 'Näytä', user %></td>
+	  <td><%= link_to 'Muokkaa', edit_user_registration_path(@user) %></td>
+	</tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+        <p><%= link_to 'Omat tiedot', current_user %></p>
+        <p><%= link_to 'Muokkaa tietoja', edit_user_registration_path(@user) %></p>
+<% end %>

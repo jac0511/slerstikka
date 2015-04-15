@@ -1,0 +1,7 @@
+<p>Moikka <%= @resource.etunimi %>!</p>
+
+<p>Tunnuksesi on lukittu 10:n epäonnistuneen kirjautumisyrityksen vuoksi.</p>
+
+<p>Avaa tunnuksesi seuraavalla linkillä tai oota tunti:</p>
+
+<p><%= link_to 'Avaa tunnus', unlock_url(@resource, unlock_token: @token) %></p>

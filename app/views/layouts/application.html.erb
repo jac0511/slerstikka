@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>𝔰𝕿𝔢𝔯𝔰𝔱𝔦𝔨𝔨𝔞 — <%= @page_title %> </title>
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		<%= csrf_meta_tags %>
+	</head>
+	
+	<body>
+		<div id="header">
+			<h1>Rails проект «ТеМе» [Бета]</h1>
+			<% if user_signed_in? %>
+			<p> Kirjautuneena <%= current_user.etunimi %> <%= current_user.sukunimi %> — <%= link_to "kirjaudu ulos", destroy_user_session_path, method: :delete %>
+			<% else %>
+			<p> <%= link_to "Kirjautuminen", new_user_session_path %> 
+			<% end %>
+			<br>
+			<strong>
+			Etusivu 
+			— Toiminta
+			— Historia 
+			— <%= link_to "Keittokirja", retsepts_path %>
+				<% if user_signed_in? %>
+			— <%= link_to "sLerstikka", slerstikka_index_path %>
+			— <%= link_to "Jäsensivu", users_path %>
+				<% end %>
+				<% if user_signed_in? and current_user.hallituksessa == true %>
+			— <%= link_to "Pirtelöt", shakes_path %>
+				<% end %>
+			— English
+			</strong>
+			</p>
+		</div>
+		
+		<div id="main">
+			<% if !flash[:notice].blank? %>
+			<div class?'notice">
+				<%= flash[:notice] %>
+			</div>
+			<% end %>
+			
+			<div id="content">
+
+			<%= yield %>
+
+			</div>
+		</div>
+<!--		
+		<div id="footer">
+			<p id="copyright" style="font-size:4px"> © 𝕵. 𝕵𝔞𝔞𝔨𝔨𝔬 𝕵. 𝕾𝔦𝔦𝔳𝔬𝔫𝔢𝔫 ⚸ 2015</p>
+		</div>
+-->		
+	</body>
+</html>

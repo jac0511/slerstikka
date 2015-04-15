@@ -1,0 +1,37 @@
+/* Public stylesheet */
+
+/* Colors
+red:          #e00020
+blue:         #1a00c4
+violet:       #6e00b2
+yellow:       #ffe845
+gray:         #a4a1b2
+*/
+
+html { height: 100%; width: 100%; }
+body { width: 100%; min-width: 300px; height: 100%; margin: 0; padding: 0;
+  font: 14px "Times New Roman", Times, serif; color: black; }
+p, td, ul, ol, li, dl, dt, dd {
+  font-family: "Times New Roman", Times, serif; }
+img { border: none; }
+table { border-collapse: collapse; }
+table tr th, table tr td { vertical-align: top; text-align: left;
+  padding: 3px; }
+a, a:visited { color: red; }
+a:hover { color: gray;}
+
+.clear { clear: both; }
+.center { text-align: center; }
+
+/* Structure */
+#header { height: 80px; padding-top: 15px; text-align: center;
+  background: black; color: yellow; a: gray }
+#header h1 { margin: 0; padding: 0; font: "Courier New", Courier, monospace ; }
+#main { min-height: 400px; background: white; }
+#content { padding: 10px; }
+#footer { clear: both; height: 2em; text-align: right;
+  background: black; color: gray; }
+#footer p { margin: 0; padding: 0.5em 1em; }
+
+/* Content */
+#content h2 { color: black; }
